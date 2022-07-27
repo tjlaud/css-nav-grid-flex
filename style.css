@@ -5,6 +5,7 @@
   padding: 0px;
   box-sizing: border-box;
   color: #c3bbbb;
+  font-family: "Poppins", sans-serif;
 }
 
 body {
@@ -14,7 +15,6 @@ body {
 /* Nav bar */
 
 nav {
-  font-family: "Poppins", sans-serif;
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -125,12 +125,14 @@ nav {
 
 .grid-container {
   display: grid;
-  opacity: 1;
   grid-template-columns: repeat(3, 1fr); /*Three even columns*/
   grid-auto-columns: minmax(300px, auto);
   grid-auto-rows: minmax(100px, auto);
   justify-items: stretch; /*This will move things around inside their respective grid sections. */
   gap: 1em;
+  margin-top: 10vh;
+  margin-left: 10vh;
+  margin-right: 10vh;
   transform: translateX(
     -160%
   ); /*Keeps the grid hidden off to the left of the page*/
@@ -163,7 +165,9 @@ nav {
 /* Grid Boxes */
 
 .box {
-  padding: auto;
+  padding-left: 7px;
+  padding-top: 7px;
+  border-radius: 10px;
 }
 
 .box1 {
