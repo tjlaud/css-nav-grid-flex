@@ -4,8 +4,9 @@ const nav = document.querySelector(".navLinks");
 const links = document.querySelectorAll(".navLinks li");
 const gridButton = document.querySelector(".grid-button");
 const gridContainer = document.querySelector(".grid-container");
-// add gridcontainer > div (queryselectorall)
 const gridItems = document.querySelectorAll(".box");
+const flexButton = document.querySelector(".flex-button");
+const flexContainer = document.querySelector(".flex-container");
 
 // Function to toggle the side bar on/off
 const navSlide = () => {
@@ -39,15 +40,27 @@ const grid = () => {
       if (item.style.animation) {
         item.style.animation = "";
       } else {
-        item.style.animation = `gridDivFade ease-in-out forwards ${index / 3}s`;
+        item.style.animation = `gridDivFade ease-in-out forwards ${
+          index / 2.6
+        }s`;
       }
     });
+  });
+};
+
+//Function to toggle Flex
+const flex = () => {
+  //Event listener for Flex button
+  flexButton.addEventListener("click", () => {
+    // add the active class
+    flexContainer.classList.toggle("flex-active");
   });
 };
 
 // Call written functions
 navSlide();
 grid();
+flex();
 
 //
 //
