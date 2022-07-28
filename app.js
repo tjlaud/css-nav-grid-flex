@@ -7,6 +7,7 @@ const gridContainer = document.querySelector(".grid-container");
 const gridItems = document.querySelectorAll(".box");
 const flexButton = document.querySelector(".flex-button");
 const flexContainer = document.querySelector(".flex-container");
+const flexRotateButton = document.querySelector(".flex-rotate");
 
 // Function to toggle the side bar on/off
 const navSlide = () => {
@@ -57,10 +58,21 @@ const flex = () => {
   });
 };
 
+//Function to rotate Flex
+const flexRotate = () => {
+  flexRotateButton.addEventListener("click", () => {
+    // Swap between row and column. Can't animate flex direction so will likely have to add a key frames in order to make it looks better than it currently does.
+    flexContainer.style.flexDirection === "row"
+      ? (flexContainer.style.flexDirection = "column")
+      : (flexContainer.style.flexDirection = "row");
+  });
+};
+
 // Call written functions
 navSlide();
 grid();
 flex();
+flexRotate();
 
 //
 //

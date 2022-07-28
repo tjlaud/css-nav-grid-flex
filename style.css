@@ -201,3 +201,11 @@ nav {
   transform: translateY(-170px);
   opacity: 1;
 }
+@keyframes flexChange {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
