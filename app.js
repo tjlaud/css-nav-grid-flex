@@ -7,14 +7,13 @@ const gridContainer = document.querySelector(".grid-container");
 const gridItems = document.querySelectorAll(".box");
 const flexButton = document.querySelector(".flex-button");
 const flexContainer = document.querySelector(".flex-container");
-const flexRotateButton = document.querySelector(".flex-rotate");
+const flexRotateButton = document.querySelectorAll(".flex-box");
 
-// Function to toggle the side bar on/off
+// -----------Side bar functions------------------------
 const navSlide = () => {
   // Event listener for burger button
   burger.addEventListener("click", () => {
     nav.classList.toggle("nav-active");
-
     // Animate Links
     links.forEach((link, index) => {
       if (link.style.animation) {
@@ -30,7 +29,7 @@ const navSlide = () => {
   });
 };
 
-//Function to toggle Grid
+//-----------------Grid Functions ----------------------
 const grid = () => {
   //Event listener for Grid button
   gridButton.addEventListener("click", () => {
@@ -49,30 +48,30 @@ const grid = () => {
   });
 };
 
-//Function to toggle Flex
-const flex = () => {
-  //Event listener for Flex button
-  flexButton.addEventListener("click", () => {
-    // add the active class
-    flexContainer.classList.toggle("flex-active");
+// ---------------Flex functions--------------------------
+// Make the flex boxes appear
+flexButton.addEventListener("click", () => {
+  // add the active class
+  flexContainer.classList.toggle("flex-active");
+});
+// switch between row and column.
+// to make this eventlistener work on all three boxes a forEach needs to be used. followed by an eventlistener.
+flexRotateButton.forEach((el) => {
+  el.addEventListener("click", () => {
+    // Swap between row and column. Can't animate flex direction so keyframes is used.
+    flexContainer.style.flexDirection === "column"
+      ? (flexContainer.style.flexDirection = "row") &&
+        (flexContainer.style.animation = `flexChangeOne 1.6s ease-out`)
+      : (flexContainer.style.flexDirection = "column") &&
+        (flexContainer.style.animation = `flexChangeTwo 1.6s ease-out`);
   });
-};
+});
 
-//Function to rotate Flex
-const flexRotate = () => {
-  flexRotateButton.addEventListener("click", () => {
-    // Swap between row and column. Can't animate flex direction so will likely have to add a key frames in order to make it looks better than it currently does.
-    flexContainer.style.flexDirection === "row"
-      ? (flexContainer.style.flexDirection = "column")
-      : (flexContainer.style.flexDirection = "row");
-  });
-};
-
-// Call written functions
+//----------------- Call functions------------------------
 navSlide();
 grid();
-flex();
-flexRotate();
+
+// change button to box in the middle. So either 1 or two depending...
 
 //
 //

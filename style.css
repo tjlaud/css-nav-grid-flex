@@ -179,7 +179,7 @@ nav {
 .flex-container {
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
   opacity: 0;
   transform: translateY(300px);
@@ -189,23 +189,31 @@ nav {
   margin: auto;
   height: 10vmax;
   padding: 25px;
-  padding-top: 15px;
   background-color: #979aaa;
   border-width: 50px;
   border-radius: 5px;
 }
-.flex-container > div:nth-child(2) {
+.flex-box {
   cursor: pointer;
 }
 .flex-active {
   transform: translateY(-170px);
   opacity: 1;
 }
-@keyframes flexChange {
-  from {
+/* Creating two keyframes is a work around to allow the animation to be used each time */
+@keyframes flexChangeOne {
+  0% {
     opacity: 0;
   }
-  to {
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes flexChangeTwo {
+  0% {
+    opacity: 0;
+  }
+  100% {
     opacity: 1;
   }
 }
