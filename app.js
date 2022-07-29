@@ -34,7 +34,7 @@ const grid = () => {
   //Event listener for Grid button
   gridButton.addEventListener("click", () => {
     // add the active class
-    gridContainer.classList.toggle("grid-active");
+    linkActivate("grid", gridContainer);
     //animate the swooosh
     gridItems.forEach((item, index) => {
       if (item.style.animation) {
@@ -52,7 +52,8 @@ const grid = () => {
 // Make the flex boxes appear
 flexButton.addEventListener("click", () => {
   // add the active class
-  flexContainer.classList.toggle("flex-active");
+  linkActivate("flex", flexContainer);
+  // flexContainer.classList.toggle("flex-active");
 });
 // switch between row and column.
 // to make this eventlistener work on all three boxes a forEach needs to be used. followed by an eventlistener.
@@ -66,6 +67,26 @@ flexRotateButton.forEach((el) => {
         (flexContainer.style.animation = `flexChangeTwo 1.6s ease-out`);
   });
 });
+
+// --------------Multiple link function-------------------
+// a function that checks if any are active then deactivates the others. Use  an argument for the in use link.
+const linkActivate = (str, container) => {
+  // Switch function to remove all other active views.
+  switch (str) {
+    case "flex":
+      gridContainer.classList.remove("grid-container-active");
+      console.log("switch = flex");
+      break;
+    case "grid":
+      flexContainer.classList.remove("flex-container-active");
+      console.log("switch = grid");
+      break;
+    default:
+      console.log("default! Switch function not functioning :/");
+  }
+  // Then add the passed argument to active the desired view.
+  container.classList.toggle(str + "-container-active");
+};
 
 //----------------- Call functions------------------------
 navSlide();

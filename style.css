@@ -129,7 +129,7 @@ nav {
 }
 
 /* Added to the grid container in order to make it appear in the centre of the screen */
-.grid-active {
+.grid-container-active {
   transform: translateX(0%);
   opacity: 1;
 }
@@ -180,13 +180,14 @@ nav {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
-  align-items: center;
+  /* align-items: space-around; */
   opacity: 0;
   transform: translateY(300px);
   transition: all 1s ease-in-out;
 }
 .flex-container > div {
   margin: auto;
+  margin-top: 25px;
   height: 10vmax;
   padding: 25px;
   background-color: #979aaa;
@@ -196,8 +197,8 @@ nav {
 .flex-box {
   cursor: pointer;
 }
-.flex-active {
-  transform: translateY(-170px);
+.flex-container-active {
+  transform: translateY(-200px);
   opacity: 1;
 }
 /* Creating two keyframes is a work around to allow the animation to be used each time */
