@@ -55,7 +55,7 @@ flexButton.addEventListener("click", () => {
   linkActivate("flex", flexContainer);
   // flexContainer.classList.toggle("flex-active");
 });
-// switch between row and column.
+// Toggle between row and column.
 // to make this eventlistener work on all three boxes a forEach needs to be used. followed by an eventlistener.
 flexRotateButton.forEach((el) => {
   el.addEventListener("click", () => {
@@ -69,7 +69,7 @@ flexRotateButton.forEach((el) => {
 });
 
 // --------------Multiple link function-------------------
-// a function that checks if any are active then deactivates the others. Use  an argument for the in use link.
+// a function that activates the current link and deactivates all others.
 const linkActivate = (str, container) => {
   // Switch function to remove all other active views.
   switch (str) {
@@ -92,7 +92,6 @@ const linkActivate = (str, container) => {
 navSlide();
 grid();
 
-// change button to box in the middle. So either 1 or two depending...
-
-//
-//
+// To do
+// CSS animation tab with some interactive bits
+// an optional night mode
