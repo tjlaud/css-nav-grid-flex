@@ -7,7 +7,8 @@ const gridContainer = document.querySelector(".grid-container");
 const gridItems = document.querySelectorAll(".box");
 const flexButton = document.querySelector(".flex-button");
 const flexContainer = document.querySelector(".flex-container");
-const flexRotateButton = document.querySelectorAll(".flex-box");
+const flexRotateButton = document.querySelectorAll(".flex-container > div");
+
 const animateButton = document.querySelector(".animate-button");
 const animateContainer = document.querySelector(".animate-container");
 const animateCube = document.querySelectorAll(".animate-container > div");
