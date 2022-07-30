@@ -8,6 +8,9 @@ const gridItems = document.querySelectorAll(".box");
 const flexButton = document.querySelector(".flex-button");
 const flexContainer = document.querySelector(".flex-container");
 const flexRotateButton = document.querySelectorAll(".flex-box");
+const animateButton = document.querySelector(".animate-button");
+const animateContainer = document.querySelector(".animate-container");
+const animateCube = document.querySelectorAll(".animate-container > div");
 
 // -----------Side bar functions------------------------
 const navSlide = () => {
@@ -75,11 +78,21 @@ const linkActivate = (str, container) => {
   switch (str) {
     case "flex":
       gridContainer.classList.remove("grid-container-active");
+      animateContainer.classList.remove("animate-container-active");
       console.log("switch = flex");
       break;
     case "grid":
       flexContainer.classList.remove("flex-container-active");
+      animateContainer.classList.remove("animate-container-active");
       console.log("switch = grid");
+      break;
+    case "animate":
+      flexContainer.classList.remove("flex-container-active");
+      gridContainer.classList.remove("grid-container-active");
+      // this will start all cubes running when Animate is selected.
+      animateCube.forEach((cube) => {
+        cube.style.animationPlayState = "running";
+      });
       break;
     default:
       console.log("default! Switch function not functioning :/");
@@ -87,6 +100,21 @@ const linkActivate = (str, container) => {
   // Then add the passed argument to active the desired view.
   container.classList.toggle(str + "-container-active");
 };
+//-------------------- Animate --------------------------
+animateButton.addEventListener("click", () => {
+  // add the active class
+  linkActivate("animate", animateContainer);
+  // flexContainer.classList.toggle("flex-active");
+});
+
+// Pause the cubes if clicked on
+animateCube.forEach((cube) => {
+  cube.addEventListener("click", () => {
+    cube.style.animationPlayState === "running"
+      ? (cube.style.animationPlayState = "paused")
+      : (cube.style.animationPlayState = "running");
+  });
+});
 
 //----------------- Call functions------------------------
 navSlide();

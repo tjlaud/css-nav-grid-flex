@@ -37,6 +37,7 @@ nav {
   align-items: center;
   min-height: 8vh;
   background-color: #4c516d;
+  z-index: 1;
 }
 /* Burger button */
 .burger {
@@ -151,6 +152,7 @@ nav {
 
 /* Grid Boxes */
 .box {
+  justify-content: center;
   padding-left: 7px;
   padding-top: 7px;
   border-radius: 5px;
@@ -224,4 +226,103 @@ nav {
   100% {
     opacity: 1;
   }
+}
+
+/* ----------Animation------------ */
+.animate-container {
+  /* background-color: #1b1d27; */
+  height: 130%;
+  width: 130%;
+  opacity: 0;
+  transform: translateY(-600px);
+  transition: all 1s ease-in-out;
+}
+/* Activate the animation and de activate other links*/
+.animate-container-active {
+  /* transform: translateY(-600px); */
+  opacity: 1;
+}
+@keyframes animate {
+  0% {
+    opacity: 1;
+    transform: translateY(-1400px) rotate(0deg);
+  }
+  50% {
+    opacity: 0.4;
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-500px) rotate(720deg);
+  }
+}
+.animate-container div {
+  position: absolute;
+  display: block;
+  /* width: 20px;
+  height: 20px; */
+  padding: 15px;
+  cursor: pointer;
+  background-color: #4c516d;
+  bottom: -150px;
+  animation: animate 6s linear infinite;
+}
+.animate-container div:nth-child(1) {
+  left: 25%;
+  width: 80px;
+  height: 80px;
+  animation-delay: 0s;
+}
+.animate-container div:nth-child(2) {
+  left: 15%;
+  width: 60px;
+  height: 60px;
+  animation-delay: 1.5s;
+}
+.animate-container div:nth-child(3) {
+  left: 75%;
+  width: 30px;
+  height: 30px;
+  animation-delay: 4s;
+}
+.animate-container div:nth-child(4) {
+  left: 55%;
+  width: 50px;
+  height: 50px;
+  animation-delay: 3.5s;
+}
+.animate-container div:nth-child(5) {
+  left: 80%;
+  width: 20px;
+  height: 20px;
+  animation-delay: 5s;
+}
+.animate-container div:nth-child(6) {
+  left: 40%;
+  width: 66px;
+  height: 66px;
+  animation-delay: 2.2s;
+}
+.animate-container div:nth-child(7) {
+  left: 33%;
+  width: 33px;
+  height: 33px;
+  animation-delay: 1.7s;
+}
+.animate-container div:nth-child(8) {
+  left: 60%;
+  width: 44px;
+  height: 44px;
+  animation-delay: 0.5s;
+}
+.animate-container div:nth-child(9) {
+  left: 17%;
+  width: 55px;
+  height: 55px;
+  animation-delay: 0.9s;
+}
+.animate-container div:nth-child(10) {
+  left: 290%;
+  width: 69px;
+  height: 69px;
+  animation-delay: 3.5s;
 }
