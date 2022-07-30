@@ -8,10 +8,12 @@ const gridItems = document.querySelectorAll(".box");
 const flexButton = document.querySelector(".flex-button");
 const flexContainer = document.querySelector(".flex-container");
 const flexRotateButton = document.querySelectorAll(".flex-container > div");
-
 const animateButton = document.querySelector(".animate-button");
 const animateContainer = document.querySelector(".animate-container");
 const animateCube = document.querySelectorAll(".animate-container > div");
+const nightButton = document.querySelector(".night-button");
+const root = document.querySelector(":root");
+let nightActive = false;
 
 // -----------Side bar functions------------------------
 const navSlide = () => {
@@ -117,10 +119,23 @@ animateCube.forEach((cube) => {
   });
 });
 
+//-------------------- Night Mode --------------------------
+
+nightButton.addEventListener("click", () => {
+  if (nightActive === false) {
+    root.style.setProperty("--navColour", "#302f36");
+    root.style.setProperty("--backgroundColour", "#464353");
+    root.style.setProperty("--itemColour", "#4b4f64");
+    root.style.setProperty("--fontColour", "#a0a2ad");
+    nightActive = !nightActive;
+  } else {
+    root.style.setProperty("--navColour", "#4c516d");
+    root.style.setProperty("--backgroundColour", "#c3bbbb");
+    root.style.setProperty("--itemColour", "#979aaa");
+    root.style.setProperty("--fontColour", "#c3bbbb");
+    nightActive = !nightActive;
+  }
+});
 //----------------- Call functions------------------------
 navSlide();
 grid();
-
-// To do
-// CSS animation tab with some interactive bits
-// an optional night mode

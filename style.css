@@ -1,16 +1,22 @@
 /* Core  */
 
+:root {
+  --navColour: #4c516d;
+  --backgroundColour: #c3bbbb;
+  --itemColour: #979aaa;
+  --fontColour: #c3bbbb;
+}
+
 * {
   margin: 0px;
   padding: 0px;
   box-sizing: border-box;
-  color: #c3bbbb;
   font-family: "Poppins", sans-serif;
-  /* overflow-x: hidden; prevents the page from scrolling left or right */
+  color: var(--fontColour);
 }
 
 body {
-  background-color: #c3bbbb;
+  background-color: var(--backgroundColour);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -26,7 +32,7 @@ body {
 }
 
 .logo {
-  color: #c3bbbb;
+  color: var(--backgroundColour);
   text-transform: uppercase;
   letter-spacing: 5px;
   font-size: 20px;
@@ -36,7 +42,7 @@ body {
 nav {
   align-items: center;
   min-height: 8vh;
-  background-color: #4c516d;
+  background-color: var(--navColour);
   z-index: 2;
 }
 /* Burger button */
@@ -49,7 +55,7 @@ nav {
   width: 25px;
   height: 2.5px;
   margin: 5px;
-  background-color: #c3bbbb;
+  background-color: var(--backgroundColour);
   transition: all 0.3s ease;
 }
 /* Used to make the "burger" turn into a cross */
@@ -73,7 +79,7 @@ nav {
   right: 0px;
   height: 92vh;
   width: 18vw;
-  background-color: #4c516d;
+  background-color: var(--navColour);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -89,7 +95,7 @@ nav {
 }
 .navLinks li {
   list-style: none;
-  color: #c3bbbb;
+  color: var(--fontColour);
   text-decoration: none;
   letter-spacing: 3px;
   font-weight: bold;
@@ -139,7 +145,7 @@ nav {
   opacity: 1;
 }
 .grid-container > div {
-  background: #979aaa;
+  background: var(--itemColour);
 }
 @keyframes gridDivFade {
   from {
@@ -184,7 +190,6 @@ nav {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
-  /* align-items: space-around; */
   opacity: 0;
   transform: translateY(300px);
   transition: all 1s ease-in-out;
@@ -195,7 +200,7 @@ nav {
   margin-top: 25px;
   height: 10vmax;
   padding: 25px;
-  background-color: #979aaa;
+  background-color: var(--itemColour);
   border-width: 50px;
   border-radius: 5px;
   cursor: pointer;
@@ -228,7 +233,6 @@ nav {
 
 /* ----------Animation------------ */
 .animate-container {
-  /* background-color: #1b1d27; */
   height: 130%;
   width: 130%;
   opacity: 0;
@@ -237,7 +241,6 @@ nav {
 }
 /* Activate the animation and de activate other links*/
 .animate-container-active {
-  /* transform: translateY(-600px); */
   opacity: 1;
 }
 @keyframes animate {
@@ -256,11 +259,9 @@ nav {
 .animate-container div {
   position: absolute;
   display: block;
-  /* width: 20px;
-  height: 20px; */
   padding: 15px;
   cursor: pointer;
-  background-color: #4c516d;
+  background-color: var(--navColour);
   bottom: -150px;
   animation: animate 6s linear infinite;
 }
